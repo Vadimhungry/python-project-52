@@ -9,6 +9,9 @@ readme = "README.md"
 python = "^3.10"
 python-dotenv = "^1.0.0"
 django-bootstrap5 = "^23.3"
+django = "^5.0"
+whitenoise = {extras = ["brotli"], version = "^6.6.0"}
+gunicorn = "^21.2.0"
 
 
 [build-system]
