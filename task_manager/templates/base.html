@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load i18n %}
 <html lang="en">
 <head>
     <title>{% block title %}Django на Хекслете{% endblock %}</title>
@@ -10,24 +11,24 @@
     <div id="sidebar">
         {% block sidebar %}
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/">Менеджер задач</a>
+            <a class="navbar-brand" href="/">{% translate "Task manager" %}</a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarToggleExternalContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/users/">Пользователи</a>
+                        <a class="nav-link" href="/users/">{% translate "Users" %}</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/statuses/">Статусы</a>
+                        <a class="nav-link" href="/statuses/">{% translate "Statuses" %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/labels/">Метки</a>
+                        <a class="nav-link" href="/labels/">{% translate "Labels" %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/tasks/">Задачи</a>
+                        <a class="nav-link" href="/tasks/">{% translate "Tasks" %}</a>
                     </li>
 
                 </ul>
@@ -36,7 +37,7 @@
                     <form action="/logout/" method="post">
                         <input type="hidden" name="csrfmiddlewaretoken"
                                value="O5gBu3C4BuKbl8wFe2Hg5R2frmjzQf04AlitI3dwXi2q62j849aDMYTxcxK8udXm">
-                        <input class="btn nav-link" type="submit" value="Выход">
+                        <input class="btn nav-link" type="submit" value="{% translate 'Logout' %}">
                     </form>
 
                 </ul>
