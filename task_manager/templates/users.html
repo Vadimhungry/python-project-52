@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block title %}
+{% translate "Task manager Hexlet" %}
+{% endblock %}
+
+{% block content %}
+<div class="container wrapper flex-grow-1">
+
+    <h1 class="my-4">{% translate "Users" %}</h1>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>{% translate "User name" %}</th>
+            <th>{% translate "Full name" %}</th>
+            <th>{% translate "Date of creation" %}</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.nickname }}</td>
+            <td>{{ user.fullname }}</td>
+            <td>{{ user.timestamp }}</td>
+            <td>
+                <a href="/users/2/update/">Изменить</a>
+                <br>
+                <a href="/users/2/delete/">Удалить</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}
